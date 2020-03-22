@@ -1,16 +1,11 @@
 package br.com.kaminski.codenews.domain;
 
-import javax.persistence.*;
 
-@Entity
 public class City {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @ManyToOne
     private State state;
 
     public City() {

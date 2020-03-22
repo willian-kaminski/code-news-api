@@ -1,16 +1,10 @@
 package br.com.kaminski.codenews.domain;
 
-import javax.persistence.*;
-
-@Entity
 public class State {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @ManyToOne
     private Country country;
 
     public State() {

@@ -1,19 +1,23 @@
 package br.com.kaminski.codenews.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "topics")
 public class Topic {
 
+    private static final long serialVersionUID = -1905907502453138175L;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String name;
     private LocalDateTime localDateTimePublication;
+
+    public Topic() {
+    }
 
     public Topic(Long id, String name) {
         this.id = id;
