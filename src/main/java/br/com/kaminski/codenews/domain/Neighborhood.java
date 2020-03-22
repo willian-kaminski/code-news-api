@@ -1,9 +1,16 @@
 package br.com.kaminski.codenews.domain;
 
+import javax.persistence.*;
+
+@Entity
 public class Neighborhood {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @ManyToOne
     private City city;
 
     public Neighborhood() {

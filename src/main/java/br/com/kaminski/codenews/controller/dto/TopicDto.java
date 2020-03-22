@@ -3,6 +3,8 @@ package br.com.kaminski.codenews.controller.dto;
 import br.com.kaminski.codenews.domain.Topic;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class TopicDto {
 
@@ -26,6 +28,10 @@ public class TopicDto {
 
     public LocalDateTime getLocalDateTimePublication() {
         return localDateTimePublication;
+    }
+
+    public static List<TopicDto> convertTopic(List<Topic> topics) {
+        return topics.stream().map(TopicDto::new).collect(Collectors.toList());
     }
 
 }
