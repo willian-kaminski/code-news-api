@@ -26,4 +26,63 @@ public class News {
     private String urlImage;
     private LocalDateTime localDateTimePublication;
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
+
+    public LocalDateTime getLocalDateTimePublication() {
+        return localDateTimePublication;
+    }
+
+    public void setLocalDateTimePublication(LocalDateTime localDateTimePublication) {
+        this.localDateTimePublication = localDateTimePublication;
+    }
 }

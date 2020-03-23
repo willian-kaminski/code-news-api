@@ -1,7 +1,6 @@
 package br.com.kaminski.codenews.domain;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -19,10 +18,6 @@ public class User {
     private String password;
     private boolean valid;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    private Address address;
-
     public User() {
     }
 
@@ -33,7 +28,6 @@ public class User {
         this.number = number;
         this.password = password;
         this.valid = valid;
-        this.address = address;
     }
 
     public static long getSerialVersionUID() {
@@ -88,13 +82,6 @@ public class User {
         this.valid = valid;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 
     @Override
     public String toString() {
@@ -105,7 +92,6 @@ public class User {
                 ", number='" + number + '\'' +
                 ", password='" + password + '\'' +
                 ", valid=" + valid +
-                ", address=" + address +
                 '}';
     }
 }

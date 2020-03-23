@@ -15,7 +15,7 @@ public class TopicController {
     @Autowired
     private TopicRepository topicRepository;
 
-    @RequestMapping("/topicos")
+    @RequestMapping("/topics")
     public List<TopicDto> lis(){
         List<Topic> topics = topicRepository.findAll();
         return TopicDto.convertTopic(topics);

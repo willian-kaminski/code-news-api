@@ -12,7 +12,7 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(mappedBy = "address")
+    @OneToOne(cascade = CascadeType.ALL)
     private User user;
 
     private String number;
@@ -38,6 +38,7 @@ public class Address {
         this.country = country;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.user = user;
     }
 
     public static long getSerialVersionUID() {
