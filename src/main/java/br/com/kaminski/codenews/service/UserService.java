@@ -26,6 +26,11 @@ public class UserService {
 
     public User register(UsersForm usersForm){
         User user = usersForm.convert(usersForm);
+
+        if(userRepository.existsByEmail(usersForm.getEmail())){
+            throw new RuntimeException("Email already registred.");
+        }
+        
         userRepository.save(user);
         return user;
     }
