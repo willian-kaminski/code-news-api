@@ -1,4 +1,4 @@
-package br.com.kaminski.codenews.controller.form;
+package br.com.kaminski.codenews.domain.form;
 
 import br.com.kaminski.codenews.domain.News;
 import br.com.kaminski.codenews.domain.Topic;

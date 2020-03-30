@@ -1,6 +1,6 @@
 package br.com.kaminski.codenews.controller;
 
-import br.com.kaminski.codenews.controller.form.NewsForm;
+import br.com.kaminski.codenews.domain.form.NewsForm;
 import br.com.kaminski.codenews.domain.News;
 import br.com.kaminski.codenews.domain.dto.NewsDto;
 import br.com.kaminski.codenews.service.NewsService;
@@ -29,6 +29,7 @@ public class NewsController {
         return newsService.listAll();
     }
 
+    @PostMapping
     public ResponseEntity<NewsDto> register(@RequestBody NewsForm form){
         News news = newsService.register(form);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().build().toUri();

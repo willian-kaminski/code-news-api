@@ -1,6 +1,6 @@
 package br.com.kaminski.codenews.service;
 
-import br.com.kaminski.codenews.controller.form.TopicForm;
+import br.com.kaminski.codenews.domain.form.TopicForm;
 import br.com.kaminski.codenews.domain.Topic;
 import br.com.kaminski.codenews.domain.dto.TopicDto;
 import br.com.kaminski.codenews.repository.TopicRepository;

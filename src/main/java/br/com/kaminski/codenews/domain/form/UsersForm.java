@@ -1,12 +1,33 @@
-package br.com.kaminski.codenews.controller.form;
+package br.com.kaminski.codenews.domain.form;
 
 import br.com.kaminski.codenews.domain.User;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class UsersForm {
 
+    @NotNull
+    @NotEmpty
+    @Length(min = 5, max = 255)
     private String name;
+
+    @NotNull
+    @NotEmpty
+    @Email
+    @Length(min = 10, max = 255)
     private String email;
+
+    @NotNull
+    @NotEmpty
+    @Length(min = 8, max = 8)
     private String number;
+
+    @NotNull
+    @NotEmpty
+    @Length(min = 5, max = 255)
     private String password;
 
     public String getName() {

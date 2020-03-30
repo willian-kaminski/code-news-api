@@ -1,6 +1,6 @@
 package br.com.kaminski.codenews.service;
 
-import br.com.kaminski.codenews.controller.form.UsersForm;
+import br.com.kaminski.codenews.domain.form.UsersForm;
 import br.com.kaminski.codenews.domain.User;
 import br.com.kaminski.codenews.domain.dto.UserDto;
 import br.com.kaminski.codenews.repository.UserRepository;
@@ -30,7 +30,7 @@ public class UserService {
         if(userRepository.existsByEmail(usersForm.getEmail())){
             throw new RuntimeException("Email already registred.");
         }
-        
+
         userRepository.save(user);
         return user;
     }
