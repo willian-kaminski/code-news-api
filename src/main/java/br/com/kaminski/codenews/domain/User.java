@@ -16,18 +16,16 @@ public class User {
     private String email;
     private String number;
     private String password;
-    private boolean valid;
+    private boolean valid = false;
 
     public User() {
     }
 
-    public User(Long id, String name, String email, String number, String password, boolean valid, Address address) {
-        this.id = id;
+    public User(String name, String email, String number, String password) {
         this.name = name;
         this.email = email;
         this.number = number;
         this.password = password;
-        this.valid = valid;
     }
 
     public static long getSerialVersionUID() {

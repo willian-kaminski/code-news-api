@@ -1,5 +1,6 @@
-package br.com.kaminski.codenews.controller.dto;
+package br.com.kaminski.codenews.domain.dto;
 
+import br.com.kaminski.codenews.domain.Topic;
 import br.com.kaminski.codenews.domain.User;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class UserDto {
         this.id = user.getId();
         this.name = user.getName();
         this.email = user.getEmail();
+        this.number = user.getNumber();
     }
 
     public Long getId() {

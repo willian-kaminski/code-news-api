@@ -10,7 +10,7 @@ public class News {
     private static final long serialVersionUID = -1905907502453138175L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -24,7 +24,15 @@ public class News {
 
     private String body;
     private String urlImage;
-    private LocalDateTime localDateTimePublication;
+    private LocalDateTime localDateTimePublication = LocalDateTime.now();
+
+    public News(String title, String body, String urlImage, Topic topic, User user) {
+        this.title = title;
+        this.body = body;
+        this.urlImage = urlImage;
+        this.topic = topic;
+        this.user = user;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;

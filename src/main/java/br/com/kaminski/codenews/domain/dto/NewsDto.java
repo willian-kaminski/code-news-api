@@ -1,7 +1,6 @@
-package br.com.kaminski.codenews.controller.dto;
+package br.com.kaminski.codenews.domain.dto;
 
 import br.com.kaminski.codenews.domain.News;
-import br.com.kaminski.codenews.domain.Topic;
 
 import java.time.LocalDateTime;
 import java.util.List;

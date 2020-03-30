@@ -1,23 +1,38 @@
 package br.com.kaminski.codenews.controller;
 
-import br.com.kaminski.codenews.controller.dto.NewsDto;
+import br.com.kaminski.codenews.controller.form.NewsForm;
 import br.com.kaminski.codenews.domain.News;
-import br.com.kaminski.codenews.repository.NewsRepository;
+import br.com.kaminski.codenews.domain.dto.NewsDto;
+import br.com.kaminski.codenews.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
+
 @RestController
+@RequestMapping("/news")
 public class NewsController {
 
-    @Autowired
-    private NewsRepository newsRepository;
+    private NewsService newsService;
 
-    @RequestMapping("/news")
-    public List<NewsDto> lisAll(){
-        List<News> news = newsRepository.findAll();
-        return NewsDto.convertNews(news);
+    @Autowired
+    public NewsController(NewsService newsService) {
+        this.newsService = newsService;
     }
+
+    @GetMapping
+    public List<NewsDto> listAll(){
+        return newsService.listAll();
+    }
+
+    public ResponseEntity<NewsDto> register(@RequestBody NewsForm form){
+        News news = newsService.register(form);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().build().toUri();
+        return ResponseEntity.created(uri).body(new NewsDto(news));
+    }
+
 }

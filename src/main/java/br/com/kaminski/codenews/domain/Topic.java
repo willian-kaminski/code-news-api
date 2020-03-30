@@ -10,17 +10,21 @@ public class Topic {
     private static final long serialVersionUID = -1905907502453138175L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     private String name;
-    private LocalDateTime localDateTimePublication;
+    private LocalDateTime localDateTimePublication = LocalDateTime.now();
 
     public Topic() {
     }
 
     public Topic(Long id, String name) {
         this.id = id;
+        this.name = name;
+    }
+
+    public Topic(String name) {
         this.name = name;
     }
 
