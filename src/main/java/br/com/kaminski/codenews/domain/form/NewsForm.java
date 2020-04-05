@@ -3,13 +3,30 @@ package br.com.kaminski.codenews.domain.form;
 import br.com.kaminski.codenews.domain.News;
 import br.com.kaminski.codenews.domain.Topic;
 import br.com.kaminski.codenews.domain.User;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class NewsForm {
 
+    @NotNull
+    @NotEmpty
     private String title;
+
+    @NotNull
+    @NotEmpty
+    @Length(min = 10, max = 800)
     private String body;
+
     private String urlImage;
+
+    @NotNull
+    @NotEmpty
     private Long topic_id;
+
+    @NotNull
+    @NotEmpty
     private Long user_id;
 
     public String getTitle() {
