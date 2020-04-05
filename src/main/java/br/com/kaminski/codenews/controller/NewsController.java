@@ -1,5 +1,6 @@
 package br.com.kaminski.codenews.controller;
 
+import br.com.kaminski.codenews.domain.dto.NewsDetailDto;
 import br.com.kaminski.codenews.domain.form.NewsForm;
 import br.com.kaminski.codenews.domain.News;
 import br.com.kaminski.codenews.domain.dto.NewsDto;
@@ -34,6 +35,11 @@ public class NewsController {
         News news = newsService.register(form);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().build().toUri();
         return ResponseEntity.created(uri).body(new NewsDto(news));
+    }
+
+    @GetMapping("/{id}")
+    public NewsDetailDto detail(@PathVariable Long id){
+        return newsService.detail(id);
     }
 
 }

@@ -30,4 +30,9 @@ public class TopicService {
         return topic;
     }
 
+    public TopicDto detail(Long id){
+        Topic topic = topicRepository.getOne(id);
+        return new TopicDto(topic);
+    }
+
 }

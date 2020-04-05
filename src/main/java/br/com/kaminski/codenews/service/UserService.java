@@ -1,5 +1,6 @@
 package br.com.kaminski.codenews.service;
 
+import br.com.kaminski.codenews.domain.dto.UserDetailDto;
 import br.com.kaminski.codenews.domain.form.UsersForm;
 import br.com.kaminski.codenews.domain.User;
 import br.com.kaminski.codenews.domain.dto.UserDto;
@@ -33,6 +34,11 @@ public class UserService {
 
         userRepository.save(user);
         return user;
+    }
+
+    public UserDetailDto detail(Long id){
+        User user = userRepository.getOne(id);
+        return new UserDetailDto(user);
     }
 
 }

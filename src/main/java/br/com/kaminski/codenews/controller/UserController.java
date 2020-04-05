@@ -1,5 +1,6 @@
 package br.com.kaminski.codenews.controller;
 
+import br.com.kaminski.codenews.domain.dto.UserDetailDto;
 import br.com.kaminski.codenews.domain.form.UsersForm;
 import br.com.kaminski.codenews.domain.User;
 import br.com.kaminski.codenews.domain.dto.UserDto;
@@ -34,6 +35,11 @@ public class UserController {
         User user = userService.register(usersForm);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().build().toUri();
         return ResponseEntity.created(uri).body(new UserDto(user));
+    }
+
+    @GetMapping("/{id}")
+    public UserDetailDto detail(@PathVariable Long id){
+        return userService.detail(id);
     }
 
 }

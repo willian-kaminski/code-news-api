@@ -26,6 +26,9 @@ public class News {
     private String urlImage;
     private LocalDateTime localDateTimePublication = LocalDateTime.now();
 
+    public News() {
+    }
+
     public News(String title, String body, String urlImage, Topic topic, User user) {
         this.title = title;
         this.body = body;

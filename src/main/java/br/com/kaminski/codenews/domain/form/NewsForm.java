@@ -3,7 +3,6 @@ package br.com.kaminski.codenews.domain.form;
 import br.com.kaminski.codenews.domain.News;
 import br.com.kaminski.codenews.domain.Topic;
 import br.com.kaminski.codenews.domain.User;
-import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -16,7 +15,6 @@ public class NewsForm {
 
     @NotNull
     @NotEmpty
-    @Length(min = 10, max = 800)
     private String body;
 
     private String urlImage;

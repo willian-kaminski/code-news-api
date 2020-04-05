@@ -35,4 +35,10 @@ public class TopicController {
         return ResponseEntity.created(uri).body(new TopicDto(topic));
     }
 
+
+    @GetMapping("/{id}")
+    public TopicDto detail(@PathVariable Long id){
+        return topicService.detail(id);
+    }
+
 }

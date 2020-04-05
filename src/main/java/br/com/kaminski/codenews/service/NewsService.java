@@ -1,5 +1,6 @@
 package br.com.kaminski.codenews.service;
 
+import br.com.kaminski.codenews.domain.dto.NewsDetailDto;
 import br.com.kaminski.codenews.domain.form.NewsForm;
 import br.com.kaminski.codenews.domain.News;
 import br.com.kaminski.codenews.domain.Topic;
@@ -38,5 +39,10 @@ public class NewsService {
         News news = newsForm.convert(newsForm, topic, user);
         newsRepository.save(news);
         return news;
+    }
+
+    public NewsDetailDto detail(Long id){
+        News news = newsRepository.getOne(id);
+        return new NewsDetailDto(news);
     }
 }

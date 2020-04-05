@@ -80,7 +80,6 @@ public class User {
         this.valid = valid;
     }
 
-
     @Override
     public String toString() {
         return "User{" +
